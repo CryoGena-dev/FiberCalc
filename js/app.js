@@ -1,4 +1,4 @@
-window.onload = () => window.app = new class {
+window.onload = () => new class {
 	constructor() {
 		this.root = document.body;
 		setTimeout(() => this.run(), 100);
