@@ -1,0 +1,46 @@
+.uploader__dropzone {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 5px dashed var(--text-color);
+	border-radius: 1em;
+	background-color: transparent;
+	transition: background-color 0.5s;
+}
+
+.uploader__dropzone::after,
+.uploader__dropzone::before {
+	content: "";
+	position: absolute;
+	display: block;
+	height: 50%;
+	width: 50%;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center center;
+	transition: opacity 0.3s;
+}
+
+.uploader__dropzone::before {
+	background-image: var(--upload-icon);
+	opacity: 1;
+}
+
+.uploader__dropzone::after {
+	background-image: var(--drag-icon);
+	opacity: 0;
+}
+
+.uploader--drag .uploader__dropzone {
+	background-color: #eee6;
+}
+
+.uploader--drag .uploader__dropzone::before {
+	opacity: 0;
+}
+
+.uploader--drag .uploader__dropzone::after {
+	opacity: 1;
+}
